@@ -1,7 +1,7 @@
 """ https://anapioficeandfire.com/"""
 
 import tkinter as tk
-
+import requests
 
 window = tk()
 window.geometry("500x500")
