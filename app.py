@@ -1,21 +1,12 @@
 """ https://anapioficeandfire.com/"""
 
+import tkinter as tk
 
-import requests
 
-def getPoke(poke):
-    response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke.lower()}")
-    if response.status_code != 200:
-        print("Error fetching data!")
-        return None
-    
-    data = response.json()
-    return {
-        "name": data["name"],
-        "height": data["height"],
-        "weight": data["weight"],
-        "types": [t["type"]["name"] for t in data["types"]]
-    }
+window = tk()
+window.geometry("500x500")
+window.title("test")
 
-pokemon = getPoke("Bulbasaur")
-print(pokemon)
+enteruser = Entry(window, font="Arial, 12")
+submit_button = Button(window, text="Submit Data", font="Arial, 12", bg="yellow")
+testlabel = Label(window, font="Arial, 12")
